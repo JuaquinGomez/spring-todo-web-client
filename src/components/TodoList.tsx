@@ -11,7 +11,6 @@ import {getTodos} from "../services/todoService";
 interface TodoListState {
     todos: Todo[];
     loading: boolean;
-
 }
 
 class TodoList extends Component<any, TodoListState> {
@@ -38,7 +37,7 @@ class TodoList extends Component<any, TodoListState> {
                         <TodoForm reload={this.loadPage}/>
                         <Row className={styles.todoRows}>
                             {this.state.todos.map((todo: Todo) =>
-                                <TodoItem todo={todo}/>
+                                <TodoItem todo={todo} reload={this.loadPage}/>
                             )}
                         </Row>
                     </>
